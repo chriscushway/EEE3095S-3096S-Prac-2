@@ -4,7 +4,7 @@
 // Function    : Emulate an VS-ALU
 //--------------------------------------------------------
 
-module alu (clk, A, B, opcode, acc, res)
+module ALU (clk, A, B, opcode, acc, res)
     input clk;
     input [3:0] opcode;
     input [7:0] A,B;
@@ -15,7 +15,7 @@ module alu (clk, A, B, opcode, acc, res)
         begin
             case(opcode)
                 4'b0000: //ADD
-                    //do logic here                
+                    acc = A + B;                   
                 4'b0001: //SUB
                     //do logic here
                 4'b0010: //MUL
@@ -47,6 +47,7 @@ module alu (clk, A, B, opcode, acc, res)
                 4'b1111: //LTH
                     //do logic here         
                 default: //do addition on default
+            res <= acc;        
         end
 
 endmodule
