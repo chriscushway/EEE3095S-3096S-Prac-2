@@ -14,20 +14,29 @@ module ALU_tb();
         );
 
     initial begin 
-        $display("clk A B acc opcode ALU_Out");
-        $monitor("%b %b %b %b %b", clk, A, B, opcode, ALU_Out);
+        
         $dumpfile("dump.vcd");
         $dumpvars;
+        $display("+-----+----------+----------+--------+----------+");
+        $display("| clk |  A       |    B     | opcode | ALU_Out  |");
+        $display("+-----+----------+----------+--------+----------+");
+        $monitor("|  %b | %b  | %b  | %b  | %b |", clk, A, B, opcode, ALU_Out);
 
-        acc = ALU_Out;
-        clk = 1'b1; //initially set clock to high
+        // Initialise state of ports 
+
+        clk = 1'b0;       //initially set clock to low
         A = 8'b00000001;
         B = 8'b00000001;
+
+        // Test for ADD operation
         opcode = 4'b0000; // Set opcode to value for ADD operation
        
-        
         #5 clk = !clk;
         #5 clk = !clk;
+
+        A = 8'b00001010;
+        B = 8'b00000101;
+
         #5 clk = !clk;
         #5 clk = !clk;
 
