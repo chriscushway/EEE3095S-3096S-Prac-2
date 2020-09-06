@@ -26,7 +26,7 @@ module ALU_tb();
 
         clk = 1'b0;      //initially set clock to low
         A = 8'b00000001; //set A and B as equal values
-        B = 8'b00000001;
+        B = A;
       
         // Test for LTH operation
         opcode = 4'b1111; // Set opcode to value for LTH operation
@@ -36,9 +36,6 @@ module ALU_tb();
         #10
         A = 8'b00000010; //case where B > A
         B = 8'b00011001;
-        #10
-        A = 8'b00000010; //case where B > A
-        B = A;
         #10
 
         $finish;
