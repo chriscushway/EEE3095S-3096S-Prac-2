@@ -1,7 +1,7 @@
 module ALU_tb();
 
     reg clk;
-    reg[3:0] opcode;
+    reg [3:0] opcode;
     reg [7:0] A,B, acc;
     wire [7:0] ALU_Out;
 
@@ -78,54 +78,56 @@ module ALU_tb();
         opcode = 4'b0101; //Set opcode to value for MULA operation
         #10
         A = 8'b00001000;
-        B = 8'b00000001;
         #10
-        A = 8'b00001000;
-        B = 8'b00000010;
+        A = 8'b00000100;
         #10
 
         // Test MAC
         opcode = 4'b0110; //Set opcode to value for MAC operation
+        ut.acc = 8'b00000000; // reset acc value to make results easier to follow
         #10
         A = 8'b00001000;
         B = 8'b00000001;
         #10
-        A = 8'b00001000;
+        A = 8'b00110100;
         B = 8'b00000010;
+        #10
+        A = 8'b00000100;
+        B = 8'b00001010;
         #10
 
         // Test ROL
         opcode = 4'b0111; //Set opcode to value for ROL operation
         #10
-        A = 8'b00001000;
-        B = 8'b00000001;
+        A = 8'b10110001;
         #10
         A = 8'b00001000;
-        B = 8'b00000010;
+        #10
+        A = 8'b10000000;
         #10
 
         // Test ROR
         opcode = 4'b1000; //Set opcode to value for ROR operation
         #10
-        A = 8'b00001000;
-        B = 8'b00000001;
+        A = 8'b10110001;
         #10
         A = 8'b00001000;
-        B = 8'b00000010;
+        #10
+        A = 8'b00000001;
         #10
 
-        // Test DIV
-        opcode = 4'b0010; //Set opcode to value for MUL operation
+        // Test AND
+        opcode = 4'b1001; //Set opcode to value for AND operation
         #10
-        A = 8'b00001000;
-        B = 8'b00000001;
+        A = 8'b10101010;
+        B = 8'b01010101;
         #10
-        A = 8'b00001000;
-        B = 8'b00000010;
+        A = 8'b10101010;
+        B = 8'b00001010;
         #10
 
-        // Test DIV
-        opcode = 4'b0010; //Set opcode to value for MUL operation
+        // Test OR
+        opcode = 4'b1010; //Set opcode to value for OR operation
         #10
         A = 8'b00001000;
         B = 8'b00000001;
