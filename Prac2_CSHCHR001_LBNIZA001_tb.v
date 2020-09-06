@@ -136,6 +136,65 @@ module ALU_tb();
         B = 8'b00000010;
         #10
 
+         // Test XOR
+        opcode = 4'b1011; //Set opcode to value for XOR operation
+        #10
+        A = 8'b00000000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+        A = 8'b00001000;
+        B = 8'b00001010;
+        #10
+
+        // Test NAND
+        opcode = 4'b1100; //Set opcode to value for NAND operation
+        #10
+        A = 8'b00001001;
+        B = 8'b00000001;
+        #10
+        A = 8'b10101010;
+        B = 8'b01010101;
+        #10
+
+        // Test ETH
+        opcode = 4'b1101; //Set opcode to value for ETH operation
+        #10
+        A = 8'b00001001;
+        B = 8'b00001001;
+        #10
+        A = 8'b10101010;
+        B = 8'b01010101;
+        #10
+
+        // Test GTH
+        opcode = 4'b1110; //Set opcode to value for GTH operation
+        #10
+        A = 8'b00001001;
+        B = 8'b00001001;
+        #10
+        A = 8'b10101010;
+        B = 8'b01010101;
+        #10
+        A = 8'b00001010;
+        B = 8'b01010101;
+        #10
+
+        // Test LTH
+        opcode = 4'b1101; //Set opcode to value for LTH operation
+        #10
+        A = 8'b00001001;
+        B = 8'b00001001;
+        #10
+        A = 8'b10101010;
+        B = 8'b01010101;
+        #10
+        A = 8'b00001010;
+        B = 8'b01010101;
+        #10
+        
         $finish;
     end
 
