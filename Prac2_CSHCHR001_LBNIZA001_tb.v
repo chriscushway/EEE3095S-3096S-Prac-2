@@ -30,15 +30,26 @@ module ALU_tb();
 
         // Test for ADD operation
         opcode = 4'b0000; // Set opcode to value for ADD operation
-       
-        #5 clk = !clk;
-        #5 clk = !clk;
-
+        #10
         A = 8'b00001010;
         B = 8'b00000101;
+        #10
 
-        #5 clk = !clk;
-        #5 clk = !clk;
+        // Test for SUB
+        opcode = 4'b0001; //Set opcode to value for SUB operation
+        #10
+        A = 8'b11111111;
+        B = 8'b11111111;
+        #10
+        A = 8'b00000000;
+        B = 8'b00000001; //Test overflow
+        #10
 
+        // Test MUL
+        opcode = 4'b0001; //Set opcode to value for MUL operation
+        $finish;
     end
+
+    always 
+        #5 clk = !clk;
 endmodule
