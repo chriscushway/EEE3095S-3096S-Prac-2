@@ -96,6 +96,17 @@ module ALU_tb();
         B = 8'b00001010;
         #10
 
+
+        // Test 2 for MAC operation
+        ut.acc = 8'b00000101;
+        #10
+        A = 8'b00001010;
+        B = 8'b00000101;
+        #10
+        A = 8'b00100010;
+        B = 8'b00011001;
+        #10
+
         // Test ROL
         opcode = 4'b0111; //Set opcode to value for ROL operation
         #10
