@@ -18,14 +18,14 @@ module ALU_tb();
         $monitor("%b %b %b %b %b %b", clk, A, B, opcode, ALU_Out);
         $dumpfile("dump.vcd");
         $dumpvars;
+
         acc = ALU_Out;
-        clk = 1'b1; //initially set clock
+        clk = 1'b1; //initially set clock to high
         A = 8'b00000001;
         B = 8'b00000001;
-        #5 clk = !clk;
-        #5 clk = !clk;
+        opcode = 4'b0000; // Set opcode to value for ADD operation
        
-        opcode = 4'b0100;
+        
         #5 clk = !clk;
         #5 clk = !clk;
         #5 clk = !clk;

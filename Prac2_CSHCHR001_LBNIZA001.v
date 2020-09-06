@@ -59,6 +59,7 @@ module ALU(clk,A,B,opcode,ALU_Out);
                         acc = 0;
                     end        
                 default: //do addition on default
+                    acc = A + B;
             endcase
             ALU_Out <= acc;        
         end
