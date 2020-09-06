@@ -29,9 +29,9 @@ module ALU(clk,A,B,opcode,ALU_Out);
                 4'b0110: //MAC
                     acc = acc + (A * B);
                 4'b0111: //ROL
-                    acc = A << 1;
+                    acc[7:0] = {A[7:0],A[7]};
                 4'b1000: //ROR
-                    acc = A >> 1;
+                    acc[7:0] = {A[0],A[7:1]};
                 4'b1001: //AND
                     acc = A & B;
                 4'b1010: //OR
