@@ -15,7 +15,7 @@ module ALU_tb();
 
     initial begin 
         $display("clk A B acc opcode ALU_Out");
-        $monitor("%b %b %b %b %b %b", clk, A, B, opcode, ALU_Out);
+        $monitor("%b %b %b %b %b", clk, A, B, opcode, ALU_Out);
         $dumpfile("dump.vcd");
         $dumpvars;
 
