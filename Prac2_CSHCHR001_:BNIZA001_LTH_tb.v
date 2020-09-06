@@ -29,7 +29,7 @@ module ALU_tb();
         B = 8'b00000001;
       
         // Test for LTH operation
-        opcode = 4'b0110; // Set opcode to value for LTH operation
+        opcode = 4'b1111; // Set opcode to value for LTH operation
         #10
         A = 8'b00001010; //case where A > B
         B = 8'b00000101;
