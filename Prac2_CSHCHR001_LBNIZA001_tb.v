@@ -46,7 +46,94 @@ module ALU_tb();
         #10
 
         // Test MUL
-        opcode = 4'b0001; //Set opcode to value for MUL operation
+        opcode = 4'b0010; //Set opcode to value for MUL operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test DIV
+        opcode = 4'b0011; //Set opcode to value for DIV operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00001000;
+        #10
+
+        // Test ADDA
+        opcode = 4'b0100; //Set opcode to value for ADDA operation
+        ut.acc = 8'b00000010; //set acc to some meaningful value
+        #10
+        A = 8'b00001010;
+        #10
+        A = 8'b00010000;
+        #10
+
+        // Test MULA
+        opcode = 4'b0101; //Set opcode to value for MULA operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test MAC
+        opcode = 4'b0110; //Set opcode to value for MAC operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test ROL
+        opcode = 4'b0111; //Set opcode to value for ROL operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test ROR
+        opcode = 4'b1000; //Set opcode to value for ROR operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test DIV
+        opcode = 4'b0010; //Set opcode to value for MUL operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
+        // Test DIV
+        opcode = 4'b0010; //Set opcode to value for MUL operation
+        #10
+        A = 8'b00001000;
+        B = 8'b00000001;
+        #10
+        A = 8'b00001000;
+        B = 8'b00000010;
+        #10
+
         $finish;
     end
 
