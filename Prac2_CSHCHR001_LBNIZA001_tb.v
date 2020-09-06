@@ -77,7 +77,7 @@ module ALU_tb();
         // Test MULA
         opcode = 4'b0101; //Set opcode to value for MULA operation
         #10
-        A = 8'b00001000;
+        A = 8'b00001000; 
         #10
         A = 8'b00000100;
         #10
@@ -99,7 +99,7 @@ module ALU_tb();
         // Test ROL
         opcode = 4'b0111; //Set opcode to value for ROL operation
         #10
-        A = 8'b10110001;
+        A = 8'b10110001; //No need to have a value for B since we only apply operator onto value of A
         #10
         A = 8'b00001000;
         #10
@@ -109,7 +109,7 @@ module ALU_tb();
         // Test ROR
         opcode = 4'b1000; //Set opcode to value for ROR operation
         #10
-        A = 8'b10110001;
+        A = 8'b10110001; //No need to have a value for B since we only apply operator onto value of A
         #10
         A = 8'b00001000;
         #10
@@ -183,7 +183,7 @@ module ALU_tb();
         #10
 
         // Test LTH
-        opcode = 4'b1101; //Set opcode to value for LTH operation
+        opcode = 4'b1111; //Set opcode to value for LTH operation
         #10
         A = 8'b00001001;
         B = 8'b00001001;
@@ -194,7 +194,7 @@ module ALU_tb();
         A = 8'b00001010;
         B = 8'b01010101;
         #10
-        
+
         $finish;
     end
 
